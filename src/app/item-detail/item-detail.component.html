@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+    <app-header></app-header>
+        <div id="list" class="row">
+            <ul class="nav navbar-nav">
+                <li class="dropdown" appDropdown>
+                    <img src="{{oneItem.imagePath}}" alt="image" class="img-responsive" height="240px" width="170px">
+                    <h4>{{oneItem.amount}}</h4>
+                    <h4>{{oneItem.description}}</h4>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <ul class="nav navbar-nav">
+                <li>
+                    <button class="btn btn-success" (click)="onBuy(oneItem.id)">Buy Now</button>
+                    <button class="btn btn-primary" (click)="onAdd(oneItem.id)">Add To Cart</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

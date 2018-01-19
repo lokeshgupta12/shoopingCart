@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row" >
+    <app-header></app-header>
+    <div *ngIf= dataInCart.length>
+        <div id="list" class="row">
+            <ul class="nav navbar-nav col-lg-12">
+                <li class="dropdown col-lg-3" *ngFor="let data of dataInCart " appDropdown>
+                    <img src="{{data.imagePath}}" alt="image" class="img-responsive" height="240px" width="170px">
+                    <h5>{{data.amount}}</h5>
+                    <h5>{{data.description}}</h5>
+                    <button class="shift" class="btn btn-primary" (click)="removeItemFromCart(data.id)">Remove</button>
+                </li>
+            </ul>
+            <a class="btn btn-primary" routerLink="">Back</a>
+            <h4>Total Amount : {{totalAmt}}</h4>
+        </div>
+        <button class="btn btn-primary" (click)="cancel()">Cancel</button>
+        <button class="btn btn-success" (click)="continue()">Continue...</button>
+    </div>
+    </div>
+<div *ngIf=!dataInCart.length>
+    <h3>You dont have any item in cart.....</h3>
+</div>
+</div>

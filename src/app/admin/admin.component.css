@@ -1,0 +1,9 @@
+.navbar-header{text-align: center;
+    width: 100%;
+}
+
+ul.nav.navbar-nav{ float: none;
+	display: table;
+    margin: auto; }
+
+    .navbar-default .navbar-nav>li>a{color: green; font-weight: bold;}

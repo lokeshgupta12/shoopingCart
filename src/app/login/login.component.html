@@ -1,0 +1,72 @@
+<div class="container">
+    <div class="row">
+    <app-header></app-header>
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <div id="create" *ngIf="showForm">
+                <h2>Create Account</h2>
+                <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+                    <div id="user-data">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" class="form-control" ngModel name="username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Mail id</label>
+                            <input type="email" id="email" class="form-control" ngModel name="email" required email #email="ngModel">
+                        </div>
+                        <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email!</span>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="text" id="password" class="form-control" ngModel name="password">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm password">Confirm Password</label>
+                            <input type="text" id="confirmpassword" class="form-control" ngModel name="confirmpassword">
+                        </div>
+                        <p>By creating account, you fulfill ours terms and conditions..</p>
+                        <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Sign in</button>
+                        <hr>
+                        
+                    </div>
+                </form>
+                <p> Already have an account?</p>
+                        <button class="btn btn-primary"  (click)="showForm = false;">Sign in now</button>
+            </div>
+
+
+
+
+
+            <!-- <ng-template #signupForm> -->
+            <div id="already"  *ngIf="!showForm">
+                <form (ngSubmit)="onServe(e)" #e="ngForm">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="email">Mail id</label>
+                            <input type="email" id="email" class="form-control" ngModel name="email" required email #email="ngModel">
+                        </div>
+                        <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email!</span>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="text" id="password" class="form-control" ngModel name="password" required>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" (click)="onLogin(e)">
+                        Login
+                    </button>
+                    <div>Not Register Yet  ?
+                        <button class="btn btn-primary" (click)="showForm = true;">
+                            Register
+                        </button>
+                    </div>
+                </form>
+            </div>
+           <!--  </ng-template> -->
+
+
+
+
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<h3>Indian Bells</h3>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <ul class="nav navbar-nav">
+                <li class="dropdown" appDropdown>
+                    <a style="cursor: pointer;" class="dropdown-toggle" role="button">Filter <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li routerLinkActive="active"><a style="cursor: pointer;" routerLink="/ethnic">Ethnic</a></li>
+                        <li routerLinkActive="active"><a style="cursor: pointer;" routerLink="/western">Western</a></li>
+                        <li routerLinkActive="active"><a style="cursor: pointer;" routerLink="/trending">Trending</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            	<li routerLinkActive="active"><a style="cursor: pointer;" routerLink="/cartData">Cart</a></li>
+            	<li routerLinkActive="active"><a style="cursor: pointer;" routerLink="/login">Login</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

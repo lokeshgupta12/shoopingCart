@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row">
+        <app-header></app-header>
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <h2>Pay Invoice</h2>
+            <form (ngSubmit)="onSubmit(f.value)" #f="ngForm">
+                <div id="user-data">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" class="form-control" ngModel name="username">
+                    </div>
+                    <div class="form-group">
+                        <label for="cardname">Name on Card</label>
+                        <input type="text" id="cardnumber" class="form-control" ngModel name="cardname" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cardnumber">Card Number</label>
+                        <input type="text" id="cardnumber" class="form-control" ngModel name="cardnumber" required>
+                    </div>
+                    <div class="form-group" *ngIf=amountPaid>
+                        <label for="amount">Amount Paid</label>
+                        <br>
+                        <label>{{amountPaid}}</label>
+                    </div>
+                    <div class="form-group" *ngIf=!amountPaid>
+                        <label for="amount">Amount Paid</label>
+                        <br>
+                        <label>{{amountPaidForCart}}</label>
+                    </div>
+                    <div class="form-group" *ngIf=!amountPaid>
+                        <label for="items">Items purchased</label>
+                        <br>
+                        <ul class="nav navbar-nav col-lg-12">
+                            <li class="dropdown col-lg-3" *ngFor="let item of purArray" appDropdown>
+                                <img src=" {{item.imagePath}} " alt="image " class="img-responsive " height="180px " width="110px ">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="form-group " *ngIf=amountPaid>
+                        <label for="items ">Item purchased</label>
+                        <br>
+                        <img src="{{purItem.imagePath}} " alt="image " class="img-responsive " height="200px " width="130px ">
+                    </div>
+                    <button class="btn btn-primary " type="submit " [disabled]="!f.valid ">Pay Amount</button>
+                    <hr>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

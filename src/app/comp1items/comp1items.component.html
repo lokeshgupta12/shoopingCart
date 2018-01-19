@@ -1,0 +1,16 @@
+<div class="container">
+	<div class="row">
+	<app-header></app-header>
+		 <div id="list" class="row" >
+		 <input type="text" placeholder="  type here..." [(ngModel)]="filteredStatus">
+		 <hr>
+            <ul class="nav navbar-nav col-lg-12">
+                <li class="dropdown col-lg-3" *ngFor="let item of inCompArray | filter:filteredStatus:'type'" appDropdown>
+            <a routerLink = "/itemDetail/{{item.id}}"><img src="{{item.imagePath}}" alt="image" class="img-responsive" height="240px" width="170px"></a>       
+                    
+                </li>
+            </ul>
+           
+        </div>
+	</div>
+</div>
